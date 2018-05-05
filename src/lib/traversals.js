@@ -7,32 +7,32 @@
 // Big O of Traversals are BigO(N) => where N == number of nodes
 // Space - Big O(H)=> where H == height becuse function goes in stack going down, but gets popped to go back up)
 
-const preOrderTraversal = (rootNode, visit) => {
-  if (!rootNode) {
+const preOrderTraversal = (node, visit) => {
+  if (!node) {
     return undefined;
   }
-  visit(rootNode);
-  preOrderTraversal(rootNode.left, visit);
-  preOrderTraversal(rootNode.right, visit);
+  visit(node);
+  preOrderTraversal(node.left, visit);
+  preOrderTraversal(node.right, visit);
   return undefined;
 };
-const postOrderTraversal = (rootNode, visit) => {
-  if (!rootNode) {
+const postOrderTraversal = (node, visit) => {
+  if (!node) {
     return undefined;
   }
-  postOrderTraversal(rootNode.left, visit);
-  postOrderTraversal(rootNode.right, visit);
-  visit(rootNode);
+  postOrderTraversal(node.left, visit);
+  postOrderTraversal(node.right, visit);
+  visit(node);
   return undefined;
 };
 
-const inOrderTraversal = (rootNode, visit) => {
-  if (!rootNode) {
+const inOrderTraversal = (node, visit) => {
+  if (!node) {
     return undefined;
   }
-  inOrderTraversal(rootNode.left, visit);
-  visit(rootNode);
-  inOrderTraversal(rootNode.right, visit);
+  inOrderTraversal(node.left, visit);
+  visit(node);
+  inOrderTraversal(node.right, visit);
   return undefined;
 };
 

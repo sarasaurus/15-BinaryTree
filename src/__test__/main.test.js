@@ -4,7 +4,7 @@
 * write at least three test assertions for each method of the Binary Tree Data Structure
 * organize your tests into appropriate describe/test blocks for test output readability
  */
-// import util from 'util';
+import util from 'util';
 import Tree from '../lib/binary-tree';
 import Node from '../lib/node';
 // import testTree from '../main';
@@ -42,7 +42,9 @@ describe('testing binary tree traversals', () => {
     seven.left = eight;
     seven.right = nine;
     tree = new Tree(one);
+    console.log('THE BINARY TREE: ', util.inspect(one, { showHidden: true, depth: null }));
     preOrderTraversal(tree.root, print);
+    console.log('pre-order: ', values);
     expect(values).toEqual('126789345');
   });
   test('post-order', () => {
@@ -56,6 +58,7 @@ describe('testing binary tree traversals', () => {
     seven.right = nine;
     tree = new Tree(one);
     postOrderTraversal(tree.root, print);
+    console.log('post-order: ', values);
     expect(values).toEqual('897624531');
   });
   test('in-order', () => {
@@ -69,6 +72,7 @@ describe('testing binary tree traversals', () => {
     seven.right = nine;
     tree = new Tree(one);
     inOrderTraversal(tree.root, print);
+    console.log('in-order: ', values);
     expect(values).toEqual('687921435');
   });
 });
