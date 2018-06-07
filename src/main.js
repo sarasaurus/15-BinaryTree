@@ -1,4 +1,5 @@
 'use strict';
+
 import util from 'util';
 import Tree from './lib/binary-tree';
 import Node from './lib/node';
